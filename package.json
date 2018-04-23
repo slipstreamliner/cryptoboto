@@ -1,0 +1,14 @@
+{
+  "name": "cryptoboto",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "if [[ $NODE_ENV == 'production' ]]; then node index.js; else nodemon index.js; fi"
+  },
+  "author": "Tony Yin (tonyin)",
+  "license": "ISC",
+  "dependencies": {
+    "keybase-chat-bot": "^1.0.1"
+  }
+}
