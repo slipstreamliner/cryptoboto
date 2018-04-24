@@ -1,5 +1,5 @@
 # cryptoboto
-Cryptoboto
+Cryptoboto is chat bot for [Keybase](http://keybase.io/) that looks up cryptocurrency prices from [CoinMarketCap](http://coinmarketcap.com/) for you.
 
 ## Quickstart
 0. Get code: `git clone`
