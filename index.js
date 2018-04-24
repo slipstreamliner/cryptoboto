@@ -25,7 +25,7 @@ bot.init({verbose: false}, function(err) {
                   try {
                     const cmc = JSON.parse(cmc_raw)
                     if (cmc.length) {
-                      price = cmc[0].symbol + ' $' + Number(cmc[0].price_usd).toFixed(2) + ' (B' + cmc[0].price_btc + ')'
+                      price = cmc[0].symbol + ' $' + Number(cmc[0].price_usd).toFixed(4) + ' (B' + cmc[0].price_btc + ')'
                       bot.chatSend({
                         channel: channel,
                         message: {body: price}
