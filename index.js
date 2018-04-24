@@ -2,7 +2,8 @@ const keybaseChatBot = require('keybase-chat-bot')
 const https = require('https')
 
 
-const CHANNEL = '' // SET ME!
+const TEAM = '' // SET ME!
+const CHANNEL = 'general' // SET ME!
 
 const bot = new keybaseChatBot.Bot()
 bot.init({verbose: false}, function(err) {
@@ -45,9 +46,9 @@ bot.init({verbose: false}, function(err) {
     bot.watchChannelForNewMessages({
       onMessages: onMessages,
       channel: {
-        name: CHANNEL,
-        public: false,
-        topic_type: 'chat'
+        name: TEAM,
+        members_type: 'team',
+        topic_name: CHANNEL
       }
     })
   }
