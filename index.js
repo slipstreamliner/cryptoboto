@@ -12,7 +12,10 @@ bot.init({verbose: false}, function(err) {
       const channel  = m.channel
       const messages = m.messages
       messages.map(m => {
-        msg = m.msg.content.text.body.split(' ')
+        msg = ''
+        if (m.msg.content.text) {
+          msg = m.msg.content.text.body.split(' ')
+        }
         if (msg.length > 1) {
           if (msg[0] === '@' + bot.myInfo().username) {
             let cmc_raw = ''
