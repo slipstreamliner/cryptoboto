@@ -12,7 +12,7 @@ bot.init({verbose: false}, function(err) {
       const channel  = m.channel
       const messages = m.messages
       messages.map(m => {
-        msg = ''
+        let msg = ''
         if (m.msg.content.text) {
           msg = m.msg.content.text.body.split(' ')
         }
@@ -28,10 +28,10 @@ bot.init({verbose: false}, function(err) {
                   try {
                     const cmc = JSON.parse(cmc_raw)
                     if (cmc.length) {
-                      price = cmc[0].symbol + ' $' + Number(cmc[0].price_usd).toFixed(4) + ' (B' + cmc[0].price_btc + ')'
+                      let output = cmc[0].symbol + ' $' + Number(cmc[0].price_usd).toFixed(4) + ' (B' + cmc[0].price_btc + ') ' + cmc[0].percent_change_24h + '% 24h — $' + Number(cmc[0].market_cap_usd).toLocaleString() + ' MC'
                       bot.chatSend({
                         channel: channel,
-                        message: {body: price}
+                        message: {body: output}
                       }, function(err, res) {
                         if (err) console.log(err)
                       })
